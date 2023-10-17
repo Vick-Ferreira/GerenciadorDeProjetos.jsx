@@ -1,0 +1,16 @@
+.mensagem {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid black;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  border-radius: 5px;
+}
+
+.sucesso {
+  color: green;
+}
+
+.erro {
+  color: red;
+}/*# sourceMappingURL=Mensagem.module.css.map */

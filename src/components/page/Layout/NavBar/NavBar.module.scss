@@ -1,0 +1,23 @@
+.navBar{
+    justify-content: space-between;
+    padding: 1em;
+    background-color: white;
+}
+.list{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 5px;
+
+}
+.itemList a{
+    padding: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(101, 176, 206);
+    border-radius: 20px;
+    &:hover{
+        background-color: rgb(91, 168, 204);
+        color: white;
+    }
+}
