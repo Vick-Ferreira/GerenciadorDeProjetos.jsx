@@ -5,8 +5,8 @@ O projeto permite a listagem, edição, adição e exclusão de tarefas e projet
 
 Embora o projeto ainda não esteja finalizado, estou continuamente trabalhando nele e abordando várias melhorias e funcionalidades. Faz parte dos meus estudos diários e contribui para o meu crescimento pessoal como desenvolvedor. Estou empolgado em ver como esse projeto evoluirá à medida que eu continuar aprendendo e explorando o mundo do desenvolvimento com React.
 
-### Para rodar:
+Para rodar:
 
-### `npm backend
+npm backend
 
-### `npm start`
+ npm start
