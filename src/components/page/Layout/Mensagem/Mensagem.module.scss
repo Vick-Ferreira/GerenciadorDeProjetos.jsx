@@ -5,11 +5,27 @@
     margin:  0 auto;//centraliza
     margin-bottom: 2em;
     border-radius: 5px;
+   
 }
 .sucesso{
     color: green;
+    text-align: center;
+    font-size: 25px;
+    border: 1px solid white;
+    padding: 15px;
+    border-radius:15px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    
 }
 .erro{
     color: red;
+    text-align: center;
+    font-size: 25px;
+    border: 1px solid white;
+    padding: 15px;
+    border-radius:15px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
 
 }

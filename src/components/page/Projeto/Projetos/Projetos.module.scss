@@ -1,0 +1,29 @@
+
+$largura-menor: 500px;
+
+.projeto_container{
+    margin: 0 auto;//centraliza
+    color:white;
+    align-items:center;
+    
+}
+.titulo_container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+  
+}
+.titulo_container h1{
+   text-align: center;
+    color:white;
+}
+.titulo_container a{
+    margin-right: 10px;
+    text-align: center;
+}
+@media screen and (min-width: $largura-menor) {
+  .titulo_container {
+    flex-direction: column;
+    }
+}

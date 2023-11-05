@@ -1,0 +1,27 @@
+.projeto_container {
+  margin: 0 auto;
+  color: white;
+  align-items: center;
+}
+
+.titulo_container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.titulo_container h1 {
+  text-align: center;
+  color: white;
+}
+
+.titulo_container a {
+  margin-right: 10px;
+  text-align: center;
+}
+
+@media screen and (min-width: 500px) {
+  .titulo_container {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=Projetos.module.css.map */

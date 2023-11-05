@@ -4,9 +4,8 @@
   margin-bottom: 1em;
 }
 
-.forma_control label {
-  margin-bottom: 0.5em;
-  font-weight: bold;
+.form_control label {
+  margin-bottom: 10px;
 }
 
 .form_control select {

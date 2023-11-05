@@ -25,7 +25,7 @@ export default function Mensagem({type, msg}) {
             }, 3000);
           
             return () => clearTimeout(timer);
-          }, [msg]);
+          }, [msg,visible]);
         return (
             <>
               {visible && (

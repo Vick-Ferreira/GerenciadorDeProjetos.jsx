@@ -1,12 +1,13 @@
 .btn{
-    text-decoration: none;
-    font-size: 20px;
-    margin: 1em;
-    border: 1px solid;
-    border-radius: 15px;
-    color:white;
     padding: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color:transparent;
     &:hover{
-        background-color: rgb(91, 168, 204);
+        background-color: rgba(255, 255, 255, 0.5);
+        color: white;
     }
 }

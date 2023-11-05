@@ -1,0 +1,18 @@
+.newproject_container {
+  width: 450px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 3em;
+  color: white;
+  align-items: center;
+}
+
+.newproject_container h1 {
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.newproject_container p {
+  color: white(101, 176, 206);
+  text-align: center;
+}/*# sourceMappingURL=NewProject.module.css.map */

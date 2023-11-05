@@ -1,0 +1,19 @@
+.form {
+  color: white;
+  margin-bottom: 25px;
+}
+
+.form button {
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  background-color: transparent;
+  text-align: center;
+}
+.form button:hover {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+}/*# sourceMappingURL=ProjetoForm.module.css.map */

@@ -4,7 +4,7 @@ import styles from '../Input/Input.module.css'
 export default function Input({type, text, name, placeholder, hand, value}) {//propriedades
 return (
     <div className={styles.form_control}>
-        <label htmlFor={name}>{text}</label>
+     
         <input 
         type={type} //acessando propriedades (danimica)
         name={name} 

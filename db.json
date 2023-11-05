@@ -1,25 +1,73 @@
 {
   "projetos": [
     {
-      "name": "Editado ",
-      "budget": "15",
+      "name": "Clone Nubank",
+      "budget": "1500.00",
+      "categoria": {
+        "id": "6",
+        "name": "Dev"
+      },
       "cost": 0,
-      "services": [],
-      "id": 9
+      "servicos": [],
+      "id": 1
     },
     {
-      "name": "Terceiro Projetoeeee",
-      "budget": "80001",
+      "name": "conta Empres",
+      "budget": "50000",
+      "categoria": {
+        "id": "3",
+        "name": "ADM"
+      },
       "cost": 0,
-      "services": [],
-      "id": 10
+      "servicos": [],
+      "id": 2
     },
     {
-      "name": "quarto projeto",
-      "budget": "20000",
+      "name": "outra tarefa",
+      "budget": "222",
+      "categoria": {
+        "id": "2",
+        "name": "QL"
+      },
       "cost": 0,
-      "services": [],
-      "id": 11
+      "servicos": [],
+      "id": 3
+    },
+    {
+      "cost": 0,
+      "servicos": [],
+      "id": 5
+    },
+    {
+      "cost": 0,
+      "servicos": [],
+      "id": 6
+    },
+    {
+      "cost": 0,
+      "servicos": [],
+      "id": 23
+    },
+    {
+      "cost": 0,
+      "servicos": [],
+      "id": 24
+    },
+    {
+      "cost": 0,
+      "servicos": [],
+      "id": 25
+    },
+    {
+      "name": "aaa",
+      "budget": "2131",
+      "categoria": {
+        "id": "2",
+        "name": "QL"
+      },
+      "cost": 0,
+      "servicos": [],
+      "id": 26
     }
   ],
   "categorias": [
@@ -46,6 +94,18 @@
     {
       "id": 6,
       "name": "Dev"
+    }
+  ],
+  "tarefas": [
+    {
+      "name": "Arrumar Qua",
+      "descricao": "Varrer, passar pano!",
+      "id": 1
+    },
+    {
+      "name": "visual kotlin",
+      "descricao": "terminal visual app",
+      "id": 2
     }
   ]
 }

@@ -1,15 +1,30 @@
-.container{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    min-height: 700px;
+$largura-menor: 500px;
+
+
+.container {
+display:block;
+justify-content: center; /* Centraliza horizontalmente */
+  padding: 20px;
+  width: 100%;
+  
+//NÃO ALTERAR 
+}
+
+.table_container {
+  display: flex;
+  text-align: center;
+ padding: 5em;
+
 
 }
-    .start{
-    justify-content: flex-start;
+.table_container table{
+  width: 100%;
+
 }
-    .column{
-    flex-direction: column;
-    justify-content: flex-start;
+.fixed{
+  min-height: 80%;
+}
+
+@media screen and (min-width: $largura-menor) {
+  
 }

@@ -8,7 +8,8 @@
 .html,
 .body,
 #root {
-  background-color: rgba(104, 173, 201, 0.932);
+  background-color: #DEB887;
+  height: 100vh;
 }
 
 .navBar {
