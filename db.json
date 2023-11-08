@@ -2,7 +2,7 @@
   "projetos": [
     {
       "name": "Clone Nubank",
-      "budget": "1500.00",
+      "budget": "1500.002",
       "categoria": {
         "id": "6",
         "name": "Dev"
@@ -68,6 +68,17 @@
       "cost": 0,
       "servicos": [],
       "id": 26
+    },
+    {
+      "name": "um novo projeto",
+      "budget": "1000",
+      "categoria": {
+        "id": "5",
+        "name": "Projetos"
+      },
+      "cost": 0,
+      "servicos": [],
+      "id": 27
     }
   ],
   "categorias": [
@@ -99,7 +110,7 @@
   "tarefas": [
     {
       "name": "Arrumar Qua",
-      "descricao": "Varrer, passar pano!",
+      "descricao": "Varrer, passar pano! edit",
       "id": 1
     },
     {

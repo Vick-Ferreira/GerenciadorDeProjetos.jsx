@@ -5,16 +5,21 @@ import ButtonSubmit from '../form/ButtonSubmit/ButtonSubmit';
 import styles from '../page/Projeto/Projeto_itens/ProjetoForm'
 
 
-export default function ServicoForm({  handleSubmit, btntext,  ProjetoData}) {
+export default function ServicoForm({  handleSubmit, btntext,  projetoData}) {
   const [servico, setServico] = useState({});
  
 
   const submit = (e) => {
     e.preventDefault();
-    ProjetoData.services.push(servico); // Use "services" em vez de "servicos"
-    handleSubmit(ProjetoData);
+  
+    console.log('ProjetoData.services:', projetoData.services);
+  
+    projetoData.servicos = projetoData.service || [];
+    projetoData.services.push(servico);
+    handleSubmit(projetoData);
   }
-  function handleChange(e) {
+  
+  function handleChange(e) {//formando opjeto no input, serviço sendo formado
     setServico({ ...servico, [e.target.name]: e.target.value });
   }
   return (

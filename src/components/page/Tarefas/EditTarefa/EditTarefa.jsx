@@ -1,54 +1,70 @@
 import { useEffect, useState } from "react";
-import TarefaForm from '../Itens_tarefa/TarefaForm';
-import Container from '../../Layout/Container/Container';
-import { useParams } from 'react-router-dom';
+import Container from "../../Layout/Container/Container";
+import TarefaForm from "../Itens_tarefa/TarefaForm";
+import { useParams, useNavigate } from 'react-router-dom'; // Importe useNavigate
 
 export default function EditTarefas() {
-    let { id } = useParams();
-    const [tarefa, setTarefa] = useState({});
+  const { id } = useParams();
+  const navigate = useNavigate(); // Use useNavigate em vez de useHistory
+  const [tarefa, setTarefa] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/tarefas/${id}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-            .then((resp) => resp.json())
-            .then((data) => {
-                setTarefa(data);
-                console.log('Dados da tarefa:', data); // Adicione esta linha para verificar os dados
+  useEffect(() => {
+    fetch(`http://localhost:5000/tarefas/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setTarefa(data);
+        setIsLoading(false);
+      })
+      .catch(err => {
+        console.log(err);
+        setIsLoading(false);
+      });
+  }, [id]);
 
-            })
-            .catch(err => console.log(err));
-    }, [id]);
+  console.log('TarefaData:', tarefa);
 
-    function editPost(tarefa) {
-        fetch(`http://localhost:5000/tarefas/${tarefa.id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(tarefa)
-        })
-        .then((resp) => resp.json())
-        .then((data) => {
-            setTarefa(data);
-        })
-        .catch(err => console.log(err));
+  function editPost(tarefa) {
+    if (!tarefa.id) {
+      console.log('ID da tarefa não definido.');
+      return;
     }
 
-    return (
-        <Container>
-            <div>
-                <p>${tarefa.name}</p>
-                <h1>Editando Tarefa</h1>
-                <TarefaForm
-                    handleSubmit={editPost}
-                    btntext="Concluir edição"
-                    TarefaData={tarefa}
-                />
-            </div>
-        </Container>
-    );
+    console.log('Tentando atualizar tarefa:', tarefa);
+    fetch(`http://localhost:5000/tarefas/${tarefa.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(tarefa),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log('Resposta da API após a atualização:', data);
+        navigate('/tarefas'); // Use navigate para redirecionar
+      })
+      .catch((err) => console.log(err));
+  }
+
+  if (isLoading) {
+    return <p>Carregando...</p>;
+  }
+
+  return (
+    <Container>
+      <div>
+        <h1>Editando Tarefa</h1>
+        <TarefaForm
+          handleSubmit={editPost}
+          btnText="Salvar Edição"
+          TarefaData={tarefa}
+        />
+      </div>
+    </Container>
+  );
 }

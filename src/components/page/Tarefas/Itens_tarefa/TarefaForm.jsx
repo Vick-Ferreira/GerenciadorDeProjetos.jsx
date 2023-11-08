@@ -1,57 +1,36 @@
+import React, { useState } from "react";
 
-import {  useState } from 'react';
+export default function TarefaForm({ handleSubmit, btnText, TarefaData }) {
+  const [formData, setFormData] = useState(TarefaData || {}); // Defina um objeto vazio como valor padrão se TarefaData for undefined.
 
-import React from 'react';
-import styles from './TarefaForm.module.css'
-import Input from '../../../form/Input/Input';
-import ButtonSubmit from '../../../form/ButtonSubmit/ButtonSubmit';
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
-
-
-export default function ProjectForm({ handleSubmit, btntext, tarefaData}) { // Vindo do componente pai
-  //vendo se os dados estão chenado -  vindo do form edição
-  const [tarefa, settarefa] = useState(tarefaData || {})
-
-
-  
-const submit = (e) => {
-  e.preventDefault()
-  handleSubmit(tarefa) // executa o metodo que foi passado pela PROPS e passo o tarefa que está cadastrado no forms como argumento
-}
-
-
-
-//IMPORTANTE metodo dinamico para ALTERAR o valor de um objeto
-function Change(e) {
-  settarefa({ ...tarefa, [e.target.name]: e.target.value })
-  //independende do input que preencher vai alterar algum texto
-  console.log(tarefa)
-}
-
+  const onSubmit = (e) => {
+    e.preventDefault();
+    handleSubmit(formData);
+  };
 
   return (
-  <form onSubmit={submit} className={styles.form}>
-  <Input
-    type="text" 
-    text="Nome da tarefa"
-    name="name"
-    placeholder="Insira o nome do tarefa"
-    hand={Change} //vai mandar o metodo para ver executado
-    value={tarefa.name}
-  />
-<Input
-  type="text"  
-  text="Descrição da tarefa"
-  name="descricao"
-  placeholder="Insira a descrição da tarefa"
-  hand={Change}
-  value={tarefa.descricao}
-/>
-
-
-
-  <ButtonSubmit text={btntext}/> {/*puxando propriedade do componente PAI */}
-  
-  </form>
+    <form onSubmit={onSubmit}>
+      <input
+        type="text"
+        name="titulo"
+        value={formData.titulo || ''} // Verifica se formData.titulo está definido
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        name="descricao"
+        value={formData.descricao || ''} // Verifica se formData.descricao está definido
+        onChange={handleChange}
+      />
+      <button type="submit">{btnText}</button>
+    </form>
   );
 }

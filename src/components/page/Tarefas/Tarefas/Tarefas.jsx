@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import TarefaCard from '../Itens_tarefa/TarefaCard';
-import Container from '../../Layout/Container/Container';
-import { useLocation } from 'react-router-dom';
+import TarefasCard from '../Itens_tarefa/TarefaCard';
+import Container from '../../Layout/Container/Container'
 
 
 
 export default function Tarefas() {
 
   const [tarefa, setTarefa] = useState ([])
-  const localiza = useLocation();
+
 
 
 //regatando dados NewTarefas para LISTAR GET
@@ -46,17 +45,16 @@ function removerTarefa(id){
 
 
   return (
-    <div className="">
-      <h1>Tarefas</h1>, que é exposto em tarefas, 
-      
+    <div className="tarefas-container">
+      <h1>Tarefas</h1>
 
       <Container>
         {/*verificar se há tarefas a serem renderizadas  */}
-           {tarefa.length > 0 &&
-          tarefa.map((tarefa) =>  (
-          <TarefaCard
+      {tarefa.length > 0 &&
+      tarefa.map((tarefa) =>  (
+          <TarefasCard
           id={tarefa.id}
-          name={tarefa.name}
+          name={tarefa.titulo}
           descricao={tarefa.descricao}
           key={tarefa.id}
           handRemover={removerTarefa} />

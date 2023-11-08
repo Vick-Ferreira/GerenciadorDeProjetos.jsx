@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import TarefaForm from '../Itens_tarefa/TarefaForm';
-import Container from '../../Layout/Container/Container'
+import TarefaForm from "../Itens_tarefa/TarefaForm";
+import Container from '../../Layout/Container/Container';
 
 export default function Newtarefa() {
 
@@ -35,7 +35,7 @@ export default function Newtarefa() {
       <h1>Nova Tarefa</h1>
       <p>Crie sua nova tarefa agora!</p>
 
-      <TarefaForm handleSubmit={createPost} btnText="Criar Tarefa"/>
+      <TarefaForm   handleSubmit={createPost} btnText="Criar Tarefa"/>
 
     </Container>
   );
