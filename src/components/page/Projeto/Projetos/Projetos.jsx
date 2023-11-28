@@ -10,38 +10,31 @@ import Loading from '../../Layout/Loading/Loading';
 export default function Projetos() {
   const [projetos, setProjetos] = useState([]);
   const [removerLoad, setRemoverLoad] = useState(false);
-  const [msgRemover, setMsgRemover] = useState('');
+  const [msgRemover, setMsgRemover] = useState();
   const localiza = useLocation();
 
+
   useEffect(() => {
-    const carregarProjetos = async () => {
-      try {
-        const response = await fetch("http://localhost:5000/projetos", {
+    
+    // Para ver o loading
+    setTimeout(
+      () =>
+        fetch('http://localhost:5000/projetos', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
           },
-        });
+        })
+          .then((resp) => resp.json())
+          .then((data) => {
+            setProjetos(data);
+            setRemoverLoad(true);
+                }),
+      200,
+    )
+  }, [])
 
-        if (!response.ok) {
-          throw new Error("Erro ao buscar projetos.");
-        }
-
-        const data = await response.json();
-        setProjetos(data);
-        setRemoverLoad(true);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    carregarProjetos();
-  }, []);
-
-  const adicionarProjeto = (novoProjeto) => {
-    setProjetos([...projetos, novoProjeto]);
-  };
-
+  
 //IMPORTANTE EXCLUIR
 function removerProjeto(id){
 
@@ -62,17 +55,21 @@ function removerProjeto(id){
   return (
     <div className={styles.projeto_container}>
       <div className={styles.titulo_container}>
+     
         <h1>Projetos Cadastrados</h1>
         <LinkButton to="/newproject" text="Criar Projeto" />
+        
       </div>
-      {localiza.state && <Mensagem type="sucesso" msg={localiza.state.mensagem} />}
+      {localiza.state && <Mensagem type="sucesso" msg={localiza.state.mensagem}/>}
       {msgRemover && <Mensagem type="sucesso" msg={msgRemover} />}
+
       <Container customClass="table_container">
-        <table border="1"  >
+        <table border="1" >
           <tr>
             <th>Projeto:</th>
             <th>Orçamento do projeto:</th>
             <th>Setor do projeto</th>
+            <th>Opções</th>
           </tr>
           {projetos.map((projeto) => (
             <ProjetoTabela
@@ -84,12 +81,14 @@ function removerProjeto(id){
               handRemover={removerProjeto}
             />
           ))}
-        </table>
-        {!removerLoad && <Loading />}
+           {!removerLoad && <Loading />}
         {removerLoad && projetos.length === 0 && (
           <p>Não há projetos cadastrados</p>
         )}
+        </table>
+       
       </Container>
+      
     </div>
   );
 }

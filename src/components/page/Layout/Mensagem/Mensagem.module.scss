@@ -1,14 +1,9 @@
-.mensagem{
-    width: 100%;
-    padding: 1em;
-    border: 1px solid black;
-    margin:  0 auto;//centraliza
-    margin-bottom: 2em;
-    border-radius: 5px;
-   
-}
+
 .sucesso{
     color: green;
+    margin: 30px  auto;
+    width: 50%;
+    min-width: 320px;
     text-align: center;
     font-size: 25px;
     border: 1px solid white;
@@ -20,6 +15,9 @@
 }
 .erro{
     color: red;
+    margin: 30px  auto;
+    width: 50%;
+    min-width: 320px;
     text-align: center;
     font-size: 25px;
     border: 1px solid white;

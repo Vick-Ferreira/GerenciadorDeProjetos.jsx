@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import TarefaForm from "../Itens_tarefa/TarefaForm";
 import Container from '../../Layout/Container/Container';
-
+import styles from '../NewTarefa/NewTarefa.module.css'
 export default function Newtarefa() {
 
  //HOKE
@@ -30,13 +30,13 @@ export default function Newtarefa() {
    }
 
   return (
-    <Container>
-    
+  <Container>
+      <div className={styles.newproject_container}>
       <h1>Nova Tarefa</h1>
-      <p>Crie sua nova tarefa agora!</p>
-
+      <p>Crie sua  tarefa!</p>
       <TarefaForm   handleSubmit={createPost} btnText="Criar Tarefa"/>
-
+    
+    </div>
     </Container>
   );
 }

@@ -1,9 +1,6 @@
-.tr {
-  padding: 1em;
-}
-
 .cabesalho {
   padding: 10px 5px;
+  word-wrap: break-word;
 }
 
 .projeto_tabela_btn a {

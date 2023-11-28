@@ -11,7 +11,7 @@ export default function ProjetoTabela({ id, name, budget, categorias, handRemove
 
   return (
   
-    <tr className={styles.header}>
+    <tr >
       <td className={styles.cabesalho}>{name}</td>
       <td className={styles.cabesalho}>R${budget}</td>
       <td className={styles.cabesalho}>{categorias}</td>

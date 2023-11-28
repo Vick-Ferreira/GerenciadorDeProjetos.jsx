@@ -1,5 +1,4 @@
 .container {
-
   position: fixed;
 
 
@@ -9,11 +8,13 @@
   width: auto;
 
 }
-.btn{
+.btnSiderbar{
  width:100%;
  height: 5em;
  border:none;
- position: a;
+ border-radius: 0;
+ background-color: rgb(249, 249, 249, 0.7);
+
 
 }
 

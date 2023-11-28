@@ -4,27 +4,67 @@ $largura-menor: 500px;
 .container {
 display:block;
 justify-content: center; /* Centraliza horizontalmente */
-  padding: 20px;
+  padding: 3em;
   width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  color: white;  
   
-//NÃO ALTERAR 
+
 }
 
 .table_container {
   display: flex;
   text-align: center;
- padding: 5em;
-
-
-}
-.table_container table{
-  width: 100%;
+  min-width: 300px;
+  min-height: 300px ;
 
 }
+
+.table_container table th{
+  padding: 1em;
+}
+
 .fixed{
   min-height: 80%;
 }
 
-@media screen and (min-width: $largura-menor) {
-  
+.container h1{
+  padding-bottom: 0.5em;
+ 
+}
+ .container p{
+  max-width: 700px;
+  margin: auto;
+  padding-bottom: 1em;
+  line-height:25px;
+ }
+
+ a{
+  padding: 5px;
+  color: white;
+  margin-right: 5px;
+  padding: 8px;
+  font-size: 20px;
+  border: 1px solid white;
+  border-radius: 20px;
+  background-color:transparent;
+  cursor: pointer;
+  &:hover{
+      background-color:white;
+      background-color: rgba(255, 255, 255, 0.5);
+      color: white;
+  }
+ }
+.hover p{
+    width: 300px;
+     padding-bottom: 0;
+     cursor: pointer;
+     margin-bottom: 20px;
+     
+     
+ }
+.hover p:hover{
+  border-radius: 5px;
+  background-color:rgb(148, 148, 143)
 }

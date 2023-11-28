@@ -68,7 +68,7 @@ function Category(e) {
     text="Nome do projeto"
     name="name"
     placeholder="Insira o nome do projeto"
-    hand={Change} //vai mandar o metodo para ver executado
+    handleOnChange={Change} //vai mandar o metodo para ver executado
     value={projeto.name}
   />
   <Input
@@ -76,14 +76,14 @@ function Category(e) {
     text="Valor do projeto"
     name="budget"
     placeholder="Insira o orçamento total do  projeto"
-    hand={Change}
+    handleOnChange={Change}
     value={projeto.budget }
   />
   <Select  
     name="categoria" 
     text="Selecione uma categoria" 
     options={categorias} 
-    hand={Category} 
+    handleOnChange={Category} 
     value={projeto.categoria ? projeto.categoria.id : ""} //está recendo os dados da API e recebendo 
   />
 

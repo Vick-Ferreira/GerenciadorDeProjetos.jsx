@@ -1,37 +1,58 @@
 {
   "projetos": [
     {
-      "name": "Clone Nubank",
-      "budget": "1500.002",
+      "name": "Novo Projeto",
+      "budget": "150",
       "categoria": {
         "id": "6",
         "name": "Dev"
       },
-      "cost": 0,
-      "servicos": [],
+      "cost": null,
+      "servicos": [
+        {
+          "name": "Novo serviço",
+          "cost": "100",
+          "descricao": "primeiro",
+          "id": "838f6b09-f063-4fb9-9136-c974e64c07f2"
+        },
+        {
+          "name": "mais um serviço",
+          "cost": "50",
+          "descricao": "segundo",
+          "id": "1064e3ed-cf04-4dae-a66d-3a7c33d57a71"
+        },
+        {
+          "id": "ec34a259-fda5-4f82-bde6-1c9004d961ff"
+        },
+        {
+          "id": "85ff7535-450f-4028-961b-e5b802267676"
+        },
+        {
+          "id": "c236be84-ff70-4021-8c38-89cff25097de"
+        }
+      ],
       "id": 1
     },
     {
-      "name": "conta Empres",
-      "budget": "50000",
-      "categoria": {
-        "id": "3",
-        "name": "ADM"
-      },
-      "cost": 0,
-      "servicos": [],
-      "id": 2
-    },
-    {
-      "name": "outra tarefa",
-      "budget": "222",
+      "name": "mais um",
+      "budget": "200",
       "categoria": {
         "id": "2",
         "name": "QL"
       },
       "cost": 0,
       "servicos": [],
+      "id": 2
+    },
+    {
+      "cost": 0,
+      "servicos": [],
       "id": 3
+    },
+    {
+      "cost": 0,
+      "servicos": [],
+      "id": 4
     },
     {
       "cost": 0,
@@ -46,39 +67,7 @@
     {
       "cost": 0,
       "servicos": [],
-      "id": 23
-    },
-    {
-      "cost": 0,
-      "servicos": [],
-      "id": 24
-    },
-    {
-      "cost": 0,
-      "servicos": [],
-      "id": 25
-    },
-    {
-      "name": "aaa",
-      "budget": "2131",
-      "categoria": {
-        "id": "2",
-        "name": "QL"
-      },
-      "cost": 0,
-      "servicos": [],
-      "id": 26
-    },
-    {
-      "name": "um novo projeto",
-      "budget": "1000",
-      "categoria": {
-        "id": "5",
-        "name": "Projetos"
-      },
-      "cost": 0,
-      "servicos": [],
-      "id": 27
+      "id": 7
     }
   ],
   "categorias": [
@@ -109,13 +98,13 @@
   ],
   "tarefas": [
     {
-      "name": "Arrumar Qua",
-      "descricao": "Varrer, passar pano! edit",
+      "titulo": "React - projeto - editando",
+      "descricao": "Terminar Projeto - 12-01",
       "id": 1
     },
     {
-      "name": "visual kotlin",
-      "descricao": "terminal visual app",
+      "titulo": "Titulo",
+      "descricao": "descrição",
       "id": 2
     }
   ]

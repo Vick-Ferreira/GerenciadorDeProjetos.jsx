@@ -25,6 +25,7 @@ export default function NewProject() {
           .then((resp) => resp.json())
           .then((data) => {
             navigate('../projetos',{ state: {mensagem: 'Projeto criado com sucesso!' }})
+            
           })
       }
 

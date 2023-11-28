@@ -18,7 +18,7 @@ export default function TarefaCard({id, name, descricao, handRemover}) {
 
       <div className={style.btn}>
         <Link to={`/edittarefas/${id}`}>Editar</Link>
-        <button onClick={remover}>Exluir</button>
+        <button  onClick={remover}>Exluir</button>
       </div>
       
     </div>

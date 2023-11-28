@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "../Itens_tarefa/TarefaForm.module.css";
 
 export default function TarefaForm({ handleSubmit, btnText, TarefaData }) {
   const [formData, setFormData] = useState(TarefaData || {}); // Defina um objeto vazio como valor padrão se TarefaData for undefined.
@@ -17,16 +18,18 @@ export default function TarefaForm({ handleSubmit, btnText, TarefaData }) {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit}  className={styles.form}>
       <input
         type="text"
         name="titulo"
+        placeholder="Insira o nome da tarefa"
         value={formData.titulo || ''} // Verifica se formData.titulo está definido
         onChange={handleChange}
       />
       <input
         type="text"
         name="descricao"
+        placeholder="Insira a descrição da tarefa"
         value={formData.descricao || ''} // Verifica se formData.descricao está definido
         onChange={handleChange}
       />

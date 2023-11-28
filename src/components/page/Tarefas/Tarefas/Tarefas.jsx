@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import TarefasCard from '../Itens_tarefa/TarefaCard';
-import Container from '../../Layout/Container/Container'
-
+import Container from '../../Layout/Container/Container';
+import styles from '../Tarefas/Tarefas.modules.css';
+import {BsFileEarmarkPlus}  from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 
 export default function Tarefas() {
@@ -45,11 +47,14 @@ function removerTarefa(id){
 
 
   return (
-    <div className="tarefas-container">
-      <h1>Tarefas</h1>
+
 
       <Container>
-        {/*verificar se há tarefas a serem renderizadas  */}
+      <div className={styles.divCentral}>
+      <Link to="/newtarefa"><BsFileEarmarkPlus/></Link> 
+      </div>
+      <h1 >Tarefas</h1>
+      {/*verificar se há tarefas a serem renderizadas  */}
       {tarefa.length > 0 &&
       tarefa.map((tarefa) =>  (
           <TarefasCard
@@ -58,11 +63,9 @@ function removerTarefa(id){
           descricao={tarefa.descricao}
           key={tarefa.id}
           handRemover={removerTarefa} />
-
         ))
 }
       </Container>
       
-    </div>
   );
 }
