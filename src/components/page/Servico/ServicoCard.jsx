@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsPencil, BsFillTrashFill } from 'react-icons/bs';
-import styles from '../servico/ServicoCard.module.css';
+import styles from '../Servico/ServicoCard.module.css';
 
 export default function ServicoCard({ id, name, cost, descricao, handleRemove }) {
+
+  const remover = (e) => {
+    e.preventDefault()
+    handleRemove(id, cost)
+
+  }
+
   return (
   <div  className={styles.card_Pai}>
     
@@ -19,7 +26,7 @@ export default function ServicoCard({ id, name, cost, descricao, handleRemove })
         <Link to={`/projetoedit/${id}`}>
           <BsPencil />
         </Link>
-        <button onClick={handleRemove}>
+        <button onClick={remover}> {/*AO CLICAR,cham const, que chama PROPS , que CHAMA O METODO LA DO PROJETOEDIT */}
           <BsFillTrashFill />
         </button>
 

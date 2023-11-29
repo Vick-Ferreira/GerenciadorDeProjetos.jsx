@@ -10,8 +10,8 @@ import Container from '../../Layout/Container/Container';
 import Loading from '../../Layout/Loading/Loading';
 import ProjetoForm from '../Projeto_itens/ProjetoForm';
 import Mensagem from '../../Layout/Mensagem/Mensagem';
-import ServicoForm from '../../../servico/ServicoForm';
-import ServicoCard from '../../../servico/ServicoCard';
+import ServicoForm from '../../Servico/ServicoForm';
+import ServicoCard from '../../Servico/ServicoCard';
 
 
 export default function ProjetoEdit() {
@@ -116,9 +116,44 @@ export default function ProjetoEdit() {
   };
 
 
-  function removerServico(){
+  function removerServico(id, cost){
+    //retirar id que vem como paramento
+    //só vai ficar os id diferentes do que veio no removido!
+    //filtrar do proprio servico
+ 
+     const servicosUpdate = projeto.servicos.filter(
+       (servico) => servico.id !== id,
+       )
+ 
+       //Pegando o projeto, e RETIRANDO o serviço do projeto especifico, chama o servicoUpdate e filtra o id e faz a remoção
+       const projetoUpdate = projeto
+ 
+       projetoUpdate.servicos = servicosUpdate  //atualização banco
+       projetoUpdate.cost = parseFloat(projetoUpdate.cost) - parseFloat(cost) //recuperndo cost do serviço e projeto especifico e fazendo uma subtração
+     //reduzindo o custo do serviço no PROJETO
+ 
+ 
+     fetch(`http://localhost:5000/projetos/${projetoUpdate.id}`, { //recuperando contant com id
+       method: 'PATCH', 
+       headers: {
+         'Content-Type' : 'application/json'
+       },
+       body: JSON.stringify(projetoUpdate),
+     })
+     .then((resp) =>  resp.json())
+     .then((data) => {
+       setProjeto(projetoUpdate)  //aqui estamos recuperando a ação acima, no proprio forntend, sabemos já que é sem o serviço, e a subtração e o id a menos
+       setServicos(servicosUpdate)
+       setMensagem('Serviço removido com sucesso!');
 
-  }
+       setTimeout(() => {
+        setMensagem('');
+      }, 3000);
+
+       
+     })
+     }
+   
 
   function toggleProjetoForms() {
     setShowProjetoForm((prev) => !prev);
@@ -195,7 +230,7 @@ export default function ProjetoEdit() {
               </div>
             </div>
             <h2>Serviços</h2>
-            <Container>
+          
               {servicos.length > 0  &&
               servicos.map((servico) => (
                 <ServicoCard
@@ -211,7 +246,6 @@ export default function ProjetoEdit() {
              
               {servicos.length === 0 &&  <p>Não há serviços cadastrados.</p>}
 
-            </Container>
           </Container>
         </div>
       ) : (

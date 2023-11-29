@@ -12,23 +12,26 @@
         {
           "name": "Novo serviço",
           "cost": "100",
-          "descricao": "primeiro",
-          "id": "838f6b09-f063-4fb9-9136-c974e64c07f2"
+          "descricao": "aa",
+          "id": "842b3681-fbdc-4d95-8b26-42767ccba970"
         },
         {
-          "name": "mais um serviço",
-          "cost": "50",
-          "descricao": "segundo",
-          "id": "1064e3ed-cf04-4dae-a66d-3a7c33d57a71"
+          "name": "a",
+          "cost": "200",
+          "descricao": "aaa",
+          "id": "bea9ee1c-b81c-419e-bd8c-305033b69273"
         },
         {
-          "id": "ec34a259-fda5-4f82-bde6-1c9004d961ff"
+          "name": "AA",
+          "cost": "150",
+          "descricao": "AA",
+          "id": "09685c06-c980-424b-b057-2d9f313cfcab"
         },
         {
-          "id": "85ff7535-450f-4028-961b-e5b802267676"
-        },
-        {
-          "id": "c236be84-ff70-4021-8c38-89cff25097de"
+          "cost": "200",
+          "name": "AA",
+          "descricao": "AA",
+          "id": "8e5318ac-af4a-4ba1-b5e3-eef1eb9c0945"
         }
       ],
       "id": 1
