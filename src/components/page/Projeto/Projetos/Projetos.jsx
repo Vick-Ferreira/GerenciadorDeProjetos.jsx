@@ -57,7 +57,7 @@ function removerProjeto(id){
       <div className={styles.titulo_container}>
      
         <h1>Projetos Cadastrados</h1>
-        <LinkButton to="/newproject" text="Criar Projeto" />
+        <LinkButton to="/newprojeto" text="Criar Projeto" />
         
       </div>
       {localiza.state && <Mensagem type="sucesso" msg={localiza.state.mensagem}/>}

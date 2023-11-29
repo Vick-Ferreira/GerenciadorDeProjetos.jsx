@@ -58,7 +58,6 @@ a:hover {
   margin-bottom: 20px;
 }
 
-.hover p:hover {
-  border-radius: 5px;
-  background-color: rgb(148, 148, 143);
+.linkNew a {
+  margin: 10px;
 }/*# sourceMappingURL=Container.module.css.map */

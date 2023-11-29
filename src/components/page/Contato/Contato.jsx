@@ -15,8 +15,8 @@ export default function Contato() {
       <div className={style.hover}>
       <p><BsWhatsapp/>  (+55)  41 9 9994-4514</p>
       <p><BiLogoGmail/> vitoriaferreirap06@gmail.com</p>
-      <p><BsGithub/><a href="https://github.com/Vick-Ferreira">GitHub</a></p>
-      <p><BsLinkedin/><a href="https://www.linkedin.com/in/vitoria-ferreira-ti/">Linkedin</a></p>
+      <p><a href="https://github.com/Vick-Ferreira">GitHub</a></p>
+      <p><a href="https://www.linkedin.com/in/vitoria-ferreira-ti/">Linkedin</a></p>
       </div>
       </Container>
   );

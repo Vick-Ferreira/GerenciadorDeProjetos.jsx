@@ -12,7 +12,12 @@
   height: 5em;
   border: none;
   border-radius: 0;
+  color: black;
   background-color: rgba(249, 249, 249, 0.7);
+}
+
+.btnSiderbar:hover {
+  color: black;
 }
 
 .menuItem {

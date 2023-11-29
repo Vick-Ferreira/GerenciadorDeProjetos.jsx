@@ -16,7 +16,7 @@ export default function CustomSidebar() {
 
   return (
     <div className={styles.container}>
-      <button className={styles.btnSiderbar} onClick={toggleSidebar}><BsMenuButtonFill/>  </button>
+      <button className={styles.btnSiderbar} onClick={toggleSidebar}><BsMenuButtonFill/></button>
       <Sidebar className={styles.sidebar} collapsed={!showSidebar}>
     
         <Menu className={styles.menu}>
@@ -25,7 +25,7 @@ export default function CustomSidebar() {
         <MenuItem className={styles.menuItem} component={<Link to="/contato">Contato</Link>}><BsFillTelephoneFill/>Contato</MenuItem>
 
         <SubMenu className={styles.menuItem} label={<><BsBarChartLine />Projetos </>}>
-        <MenuItem className={styles.menuItem} component={<Link to="/newproject">NewProject</Link>}>Novo Projeto</MenuItem>
+        <MenuItem className={styles.menuItem} component={<Link to="/newprojeto">NewProject</Link>}>Novo Projeto</MenuItem>
         <MenuItem className={styles.menuItem} component={<Link  to="/projetos">Projetos</Link>}>Projetos</MenuItem>
 
 
@@ -34,9 +34,7 @@ export default function CustomSidebar() {
         <SubMenu className={styles.menuItem} label={<>< BsCalendarCheck />Tarefas </>}>
         <MenuItem className={styles.menuItem} component={<Link to="/newtarefa"></Link>}>Nova Tarefa</MenuItem>
           <MenuItem className={styles.menuItem} component={<Link to="/tarefas"></Link>}>Tarefas</MenuItem>
-          
-          <MenuItem className={styles.menuItem} component={<Link to="/">FAZENDO</Link>}>Fazendo</MenuItem>
-          <MenuItem className={styles.menuItem} component={<Link to="/">FEITO</Link>}>Feito</MenuItem>
+
         </SubMenu>
         </Menu>
       </Sidebar>

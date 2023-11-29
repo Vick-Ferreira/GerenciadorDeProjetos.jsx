@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import TarefasCard from '../Itens_tarefa/TarefaCard';
 import Container from '../../Layout/Container/Container';
-import styles from '../Tarefas/Tarefas.modules.css';
 import {BsFileEarmarkPlus}  from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
@@ -48,12 +47,14 @@ function removerTarefa(id){
 
   return (
 
-
-      <Container>
-      <div className={styles.divCentral}>
-      <Link to="/newtarefa"><BsFileEarmarkPlus/></Link> 
+    
+      
+      <Container customClass="linkNew">
+      <div>
+      <h1>Tarefas
+        <Link to="/newtarefa"><BsFileEarmarkPlus/></Link> 
+      </h1>
       </div>
-      <h1 >Tarefas</h1>
       {/*verificar se há tarefas a serem renderizadas  */}
       {tarefa.length > 0 &&
       tarefa.map((tarefa) =>  (

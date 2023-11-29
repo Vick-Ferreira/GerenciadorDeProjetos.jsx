@@ -13,11 +13,13 @@
  height: 5em;
  border:none;
  border-radius: 0;
+ color: black;
  background-color: rgb(249, 249, 249, 0.7);
-
+}
+.btnSiderbar:hover{
+  color: black;
 
 }
-
 .menuItem{
   padding: 5px;
 }
