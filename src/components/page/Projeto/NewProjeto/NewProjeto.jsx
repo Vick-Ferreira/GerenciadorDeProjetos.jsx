@@ -22,7 +22,10 @@ export default function NewProject() {
           },
           body: JSON.stringify(projeto),
         })
-        .then((resp) => resp.json())
+        .then((resp) => {
+          console.log(resp); // Adicione esta linha para verificar a resposta
+          return resp.json();
+        })
         .then((data) => {
           navigate('../projetos/projetos', { state: { mensagem: 'Projeto criado com sucesso!' } });
         })
