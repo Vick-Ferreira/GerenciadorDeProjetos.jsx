@@ -25,7 +25,7 @@ export default function NewProject() {
         })
           .then((resp) => resp.json())
           .then((data) => {
-            navigate('https://gerenciador-de-projetos-jsx.vercel.app/projetos/projetos')
+            navigate('../projetos/projetos')
            
 })
       }
