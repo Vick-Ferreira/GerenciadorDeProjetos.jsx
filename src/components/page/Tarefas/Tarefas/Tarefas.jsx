@@ -2,18 +2,21 @@ import React, { useEffect, useState } from 'react';
 import TarefasCard from '../Itens_tarefa/TarefaCard';
 import Container from '../../Layout/Container/Container';
 import {BsFileEarmarkPlus}  from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 
 export default function Tarefas() {
 
-  const [tarefa, setTarefa] = useState ([])
 
+
+  const [tarefa, setTarefa] = useState ([])
+  const location = useLocation();
+  const mensagem = location.state && location.state.mensagem;
 
 
 //regatando dados NewTarefas para LISTAR GET
 useEffect(() => {
-  fetch("https://json-qrcod.vercel.app/tarefas", {
+  fetch("http://localhost:5000/tarefas", {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -32,7 +35,7 @@ useEffect(() => {
 //IMPORTANTE DELETE TAREFA
 function removerTarefa(id){
 
-  fetch(`https://json-qrcod.vercel.app/tarefas/${id}`, {
+  fetch(`http://localhost:5000/tarefas/${id}`, {
     method: 'DELETE',
     headers:{ //retorna algo
       'Content-Type': 'application/json'
