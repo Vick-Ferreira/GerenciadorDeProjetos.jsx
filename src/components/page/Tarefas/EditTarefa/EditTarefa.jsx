@@ -11,7 +11,7 @@ export default function EditTarefas() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/tarefas/${id}`, {
+    fetch(`https://json-qrcod.vercel.app/tarefas/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ export default function EditTarefas() {
     }
 
     console.log('Tentando atualizar tarefa:', tarefa);
-    fetch(`http://localhost:5000/tarefas/${tarefa.id}`, {
+    fetch(`https://json-qrcod.vercel.app/tarefas/${tarefa.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
