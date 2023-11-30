@@ -47,7 +47,7 @@ export default function EditTarefas() {
       .then((resp) => resp.json())
       .then((data) => {
         console.log('Resposta da API após a atualização:', data);
-        navigate('/tarefas'); // Use navigate para redirecionar
+        navigate('../tarefas'); // Use navigate para redirecionar
       })
       .catch((err) => console.log(err));
   }
