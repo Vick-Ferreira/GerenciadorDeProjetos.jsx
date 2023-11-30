@@ -19,7 +19,7 @@ export default function Projetos() {
     // Para ver o loading
     setTimeout(
       () =>
-        fetch('http://localhost:5000/projetos', {
+        fetch('https://json-qrcod.vercel.app/projetos', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
