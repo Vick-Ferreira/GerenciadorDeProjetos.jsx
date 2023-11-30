@@ -22,17 +22,10 @@ export default function NewProject() {
           },
           body: JSON.stringify(projeto),
         })
-        .then((resp) => {
-          console.log(resp); // Adicione esta linha para verificar a resposta
-          return resp.json();
-        })
-        .then((data) => {
+        .then((resp) => resp.json())
+        setTimeout(() => {
           navigate('../projetos/projetos', { state: { mensagem: 'Projeto criado com sucesso!' } });
-        })
-        .catch((error) => {
-          console.error('Erro na requisição para a API:', error);
-          // Adicione lógica para lidar com o erro, como exibir uma mensagem de erro
-        })
+        }, 500);
       }
 
   return (
