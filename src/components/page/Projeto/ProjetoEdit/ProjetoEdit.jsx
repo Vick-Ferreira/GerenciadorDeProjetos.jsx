@@ -45,7 +45,7 @@ export default function ProjetoEdit() {
       return false;
     }
   
-    fetch(`http://localhost:5000/projetos/${projeto.id}`, {
+    fetch(`https://json-qrcod.vercel.app/projetos${projeto.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ export default function ProjetoEdit() {
     projeto.cost = newCost;
 
     // Atualiza o projeto no servidor parcialmente (apenas o custo e a lista de serviços)
-    fetch(`http://localhost:5000/projetos/${projeto.id}`, {
+    fetch(`https://json-qrcod.vercel.app/projetos${projeto.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -138,7 +138,7 @@ export default function ProjetoEdit() {
      //reduzindo o custo do serviço no PROJETO
  
  
-     fetch(`http://localhost:5000/projetos/${projetoUpdate.id}`, { //recuperando contant com id
+     fetch(`https://json-qrcod.vercel.app/projetos${projetoUpdate.id}`, { //recuperando contant com id
        method: 'PATCH', 
        headers: {
          'Content-Type' : 'application/json'
