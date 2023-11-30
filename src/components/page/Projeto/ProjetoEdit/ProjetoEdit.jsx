@@ -25,7 +25,7 @@ export default function ProjetoEdit() {
   const [type, setType] = useState('success');
 
   useEffect(() => {
-    fetch(`http://localhost:5000/projetos/${id}`, {
+    fetch(`https://json-qrcod.vercel.app/projetos/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -138,7 +138,7 @@ export default function ProjetoEdit() {
      //reduzindo o custo do serviço no PROJETO
  
  
-     fetch(`https://json-qrcod.vercel.app/projetos${projetoUpdate.id}`, { //recuperando contant com id
+     fetch(`https://json-qrcod.vercel.app/projetos/${projetoUpdate.id}`, { //recuperando contant com id
        method: 'PATCH', 
        headers: {
          'Content-Type' : 'application/json'
