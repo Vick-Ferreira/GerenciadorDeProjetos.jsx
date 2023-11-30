@@ -50,7 +50,7 @@ export default function EditTarefas() {
       console.log('Resposta da API após a atualização:', data);
   
       // Adicione a navegação aqui para redirecionar após a atualização
-      navigate('./tarefas');
+      navigate('../tarefas');
     })
     .catch((err) => {
       console.error('Erro na requisição para a API:', err);
