@@ -121,47 +121,41 @@ export default function ProjetoEdit() {
   };
 
 
-  function removerServico(id, cost){
-    //retirar id que vem como paramento
-    //só vai ficar os id diferentes do que veio no removido!
-    //filtrar do proprio servico
- 
-     const servicosUpdate = projeto.servicos.filter(
-       (servico) => servico.id !== id,
-       )
- 
-       //Pegando o projeto, e RETIRANDO o serviço do projeto especifico, chama o servicoUpdate e filtra o id e faz a remoção
-       const projetoUpdate = projeto
- 
-       projetoUpdate.servicos = servicosUpdate  //atualização banco
-       projetoUpdate.cost = parseFloat(projetoUpdate.cost) - parseFloat(cost) //recuperndo cost do serviço e projeto especifico e fazendo uma subtração
-     //reduzindo o custo do serviço no PROJETO
- 
- 
-     fetch(`https://json-qrcod.vercel.app/projetos/${projetoUpdate.id}`, { //recuperando contant com id
-       method: 'PATCH', 
-       headers: {
-         'Content-Type' : 'application/json'
-       },
-       body: JSON.stringify(projetoUpdate),
-     })
-     .then((resp) =>  resp.json())
-     .then((data) => {
-       setProjeto(projetoUpdate)  //aqui estamos recuperando a ação acima, no proprio forntend, sabemos já que é sem o serviço, e a subtração e o id a menos
-       setServicos(servicosUpdate)
-       setMensagem('Serviço removido com sucesso!');
-       setType('erro')
-       
-
-       setTimeout(() => {
+  function removerServico(id, cost) {
+    const servicosUpdate = projeto.servicos.filter(
+      (servico) => servico.id !== id,
+    );
+  
+    const projetoUpdate = projeto;
+    projetoUpdate.servicos = servicosUpdate;
+    projetoUpdate.cost = parseFloat(projetoUpdate.cost) - parseFloat(cost);
+  
+    fetch(`https://json-qrcod.vercel.app/projetos/${projetoUpdate.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(projetoUpdate),
+    })
+    .then((resp) => {
+      console.log(resp); // Adicione esta linha para verificar a resposta
+      return resp.json();
+    })
+    .then((data) => {
+      setProjeto(projetoUpdate);
+      setServicos(servicosUpdate);
+      setMensagem('Serviço removido com sucesso!');
+      setType('erro');
+  
+      setTimeout(() => {
         setMensagem('');
       }, 3000);
-
-       
-     })
-     }
-   
-
+    })
+    .catch((error) => {
+      console.error('Erro na requisição para a API:', error);
+      // Adicione lógica para lidar com o erro, como exibir uma mensagem de erro
+    });
+  }
   function toggleProjetoForms() {
     setShowProjetoForm((prev) => !prev);
   }

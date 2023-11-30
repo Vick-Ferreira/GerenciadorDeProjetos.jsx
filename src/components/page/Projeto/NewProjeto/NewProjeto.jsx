@@ -24,7 +24,7 @@ export default function NewProject() {
         })
         .then((resp) => resp.json())
         setTimeout(() => {
-          navigate('../projetos/projetos', { state: { mensagem: 'Projeto criado com sucesso!' } });
+          navigate('../projetos', { state: { mensagem: 'Projeto criado com sucesso!' } });
         }, 500);
       }
 
