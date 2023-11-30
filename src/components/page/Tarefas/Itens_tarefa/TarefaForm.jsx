@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Input from '../../../form/Input/Input'
 import styles from "../Itens_tarefa/TarefaForm.module.css";
 
 export default function TarefaForm({ handleSubmit, btnText, TarefaData }) {
@@ -20,6 +21,7 @@ export default function TarefaForm({ handleSubmit, btnText, TarefaData }) {
   return (
     <form onSubmit={onSubmit}  className={styles.form}>
       <input
+        id="name" 
         type="text"
         name="titulo"
         placeholder="Insira o nome da tarefa"

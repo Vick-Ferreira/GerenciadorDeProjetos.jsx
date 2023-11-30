@@ -80,7 +80,12 @@ export default function ProjetoEdit() {
      // maximum value validation
      if (newCost > parseFloat(projeto.budget)) {
        setMensagem('Orçamento ultrapassado, verifique o valor do serviço!')
-       setType('error')
+       setType('erro')
+
+       setTimeout(() => {
+        setMensagem('');
+      }, 3000);
+
        projeto.servicos.pop()
        return false
      }
@@ -102,7 +107,7 @@ export default function ProjetoEdit() {
         setServicos(data.servicos)
         setShowServicoForm(!showServicoForm)
         setMensagem('Serviço adicionado')
-        setType('sucess')
+        setType('sucesso')
 
         // Limpar a mensagem após 3 segundos (3000 milissegundos)
         setTimeout(() => {
@@ -145,6 +150,8 @@ export default function ProjetoEdit() {
        setProjeto(projetoUpdate)  //aqui estamos recuperando a ação acima, no proprio forntend, sabemos já que é sem o serviço, e a subtração e o id a menos
        setServicos(servicosUpdate)
        setMensagem('Serviço removido com sucesso!');
+       setType('erro')
+       
 
        setTimeout(() => {
         setMensagem('');
@@ -184,16 +191,16 @@ export default function ProjetoEdit() {
                 )}
               </button>
               {!showProjetoForm ? (
-                <div>
+                <div className={styles.divCategory}>
                   <p>
-                    <span>Categoria:</span>
+                    <span className={styles.categoria}>Categoria:</span>
                     {projeto.categoria.name}
                   </p>
                   <p>
-                    <span>Total de orçamento:</span> R${projeto.budget}
+                    <span className={styles.orcamento}>Total de orçamento:</span> R${projeto.budget}
                   </p>
                   <p>
-                    <span>Total utilizado:</span> R${projeto.cost}
+                    <span className={styles.utilizado}>Total utilizado:</span> R${projeto.cost}
                   </p>
                 </div>
               ) : (
@@ -223,7 +230,7 @@ export default function ProjetoEdit() {
                 {showServicoForm && (
                   <ServicoForm
                     handleSubmit={criarServico}
-                    btntext="Add servico"
+                    btntext="Adicionar serviço"
                     ProjetoData={projeto}
                   />
                 )}
@@ -244,7 +251,7 @@ export default function ProjetoEdit() {
               ))
               }
              
-              {servicos.length === 0 &&  <p>Não há serviços cadastrados.</p>}
+              {servicos.length === 0 && <p>Não há serviços cadastrados.</p>}
 
           </Container>
         </div>

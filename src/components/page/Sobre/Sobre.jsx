@@ -7,11 +7,7 @@ export default function Sobre() {
      <Container>
       <h1>Sobre</h1>
       <p>
-        Escolhi reproduzi esse projeto pois  abrange pontos importantes para se iniciar na carreira de desenvolvedora frontend.
-        Projeto foi desenvolvido com intuito de produzi-lo de forma atonoma, com estudos diarias e máterias disponivéis na internet!
-        A ideia do projeto inicial foi atribuida com  aulas gratuitas disponivéis.
-        Tomei a liberdade de adicionar , alterar e incrementar da forma como achei interessante, e venho por meio do mesmo agradecer, 
-        a todos os profissionais da educação  pelos conteudos disponibilizados nas mídias e a quatidade de conhecimento que abstrai com esse projeto.
+      Escolhi reproduzir este projeto, pois abrange pontos importantes para iniciar na carreira de desenvolvedora frontend. O projeto foi desenvolvido com o intuito de produzi-lo de forma autônoma, por meio de estudos diários e materiais disponíveis na internet. A ideia do projeto inicial foi atribuída às aulas gratuitas disponíveis. Tomei a liberdade de adicionar, alterar e incrementar da forma como achei interessante, e venho por meio deste agradecer a todos os profissionais da educação pelos conteúdos disponibilizados nas mídias e pela quantidade de conhecimento que absorvi com este projeto.
       </p>
       </Container>
       

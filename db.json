@@ -1,76 +1,15 @@
 {
   "projetos": [
     {
-      "name": "Novo Projeto",
-      "budget": "150",
+      "name": "Servido",
+      "budget": "500.05",
       "categoria": {
-        "id": "6",
-        "name": "Dev"
+        "id": "1",
+        "name": "Infra"
       },
-      "cost": null,
-      "servicos": [
-        {
-          "name": "Novo serviço",
-          "cost": "100",
-          "descricao": "aa",
-          "id": "842b3681-fbdc-4d95-8b26-42767ccba970"
-        },
-        {
-          "name": "a",
-          "cost": "200",
-          "descricao": "aaa",
-          "id": "bea9ee1c-b81c-419e-bd8c-305033b69273"
-        },
-        {
-          "name": "AA",
-          "cost": "150",
-          "descricao": "AA",
-          "id": "09685c06-c980-424b-b057-2d9f313cfcab"
-        },
-        {
-          "cost": "200",
-          "name": "AA",
-          "descricao": "AA",
-          "id": "8e5318ac-af4a-4ba1-b5e3-eef1eb9c0945"
-        }
-      ],
+      "cost": 0,
+      "servicos": [],
       "id": 1
-    },
-    {
-      "name": "mais um",
-      "budget": "200",
-      "categoria": {
-        "id": "2",
-        "name": "QL"
-      },
-      "cost": 0,
-      "servicos": [],
-      "id": 2
-    },
-    {
-      "cost": 0,
-      "servicos": [],
-      "id": 3
-    },
-    {
-      "cost": 0,
-      "servicos": [],
-      "id": 4
-    },
-    {
-      "cost": 0,
-      "servicos": [],
-      "id": 5
-    },
-    {
-      "cost": 0,
-      "servicos": [],
-      "id": 6
-    },
-    {
-      "cost": 0,
-      "servicos": [],
-      "id": 7
     }
   ],
   "categorias": [
@@ -99,16 +38,5 @@
       "name": "Dev"
     }
   ],
-  "tarefas": [
-    {
-      "titulo": "React - projeto - editando",
-      "descricao": "Terminar Projeto - 12-01",
-      "id": 1
-    },
-    {
-      "titulo": "Titulo",
-      "descricao": "descrição",
-      "id": 2
-    }
-  ]
+  "tarefas": []
 }

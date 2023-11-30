@@ -11,7 +11,7 @@ export default function Contato() {
   
       <h1>Fale comigo!</h1>
 
-      <p>Fique a vontade para entrar em contato refêrente a oportunidade de emprego na área de desenvolvimento e ou para positivar meus conhecimentos!</p>
+      <p>Sinta-se à vontade para entrar em contato referente a oportunidades de emprego na área de desenvolvimento e/ou para discutir o aprimoramento dos meus conhecimentos!</p>
       <div className={style.hover}>
       <p><BsWhatsapp/>  (+55)  41 9 9994-4514</p>
       <p><BiLogoGmail/> vitoriaferreirap06@gmail.com</p>

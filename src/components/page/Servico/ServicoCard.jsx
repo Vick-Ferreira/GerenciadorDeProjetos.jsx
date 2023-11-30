@@ -23,9 +23,7 @@ export default function ServicoCard({ id, name, cost, descricao, handleRemove })
       <h1>{descricao}</h1>
       </div>
       
-        <Link to={`/projetoedit/${id}`}>
-          <BsPencil />
-        </Link>
+      
         <button onClick={remover}> {/*AO CLICAR,cham const, que chama PROPS , que CHAMA O METODO LA DO PROJETOEDIT */}
           <BsFillTrashFill />
         </button>

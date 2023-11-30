@@ -31,10 +31,12 @@ export default function Newtarefa() {
 
   return (
   <Container>
-      <div className={styles.newproject_container}>
+    <div className={styles.newtarefa_container}>
       <h1>Nova Tarefa</h1>
       <p>Crie sua  tarefa!</p>
-      <TarefaForm   handleSubmit={createPost} btnText="Criar Tarefa"/>
+      <TarefaForm 
+        handleSubmit={createPost}
+        btnText="Criar Tarefa"/>
     
     </div>
     </Container>

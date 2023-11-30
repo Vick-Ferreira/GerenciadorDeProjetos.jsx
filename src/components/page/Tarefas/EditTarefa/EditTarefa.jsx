@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Container from "../../Layout/Container/Container";
 import TarefaForm from "../Itens_tarefa/TarefaForm";
+import styles from '../NewTarefa/NewTarefa.module.css'
 import { useParams, useNavigate } from 'react-router-dom'; // Importe useNavigate
 
 export default function EditTarefas() {
@@ -57,8 +58,10 @@ export default function EditTarefas() {
 
   return (
     <Container>
-      <div>
+        <div className={styles.newtarefa_container}>
+
         <h1>Editando Tarefa</h1>
+        
         <TarefaForm
           handleSubmit={editPost}
           btnText="Salvar Edição"

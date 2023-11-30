@@ -12,8 +12,7 @@ export default function Home() {
     <Container>
       <section className={styles.home_container}>
       <p className={styles.span}><span >Gerencie seu dia a dia!</span></p>
-      <p className={styles.start}>Comece agora a gerenciar seus projetos e gastos e controlar sua demanda, e também aproveite para gerenciar  suas tarefas diárias
-      com eficiência!</p>
+      <p className={styles.start}>Comece agora a gerenciar seus projetos, gastos e demandas, além de aproveitar para organizar suas tarefas diárias com eficiência!</p>
       <LinkButton to="/newprojeto" text="Criar Projeto"/>
       <LinkButton to="/newtarefa" text="Criar Tarefa"/>
       </section>

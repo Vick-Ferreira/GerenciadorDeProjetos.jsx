@@ -9,10 +9,28 @@
   margin-bottom: 1em;
 }
 
+.divCategory {
+  text-align: center;
+  justify-content: center;
+  width: 300px;
+}
+
+.categoria {
+  color: #D2691E;
+}
+
+.orcamento {
+  color: red;
+}
+
+.utilizado {
+  color: yellow;
+}
+
 .projeto_detalhes h1 {
   background-color: rgba(255, 255, 255, 0.5);
   padding: 1em;
-  color: white;
+  color: #D2691E;
 }
 
 .projeto_detalhes span {

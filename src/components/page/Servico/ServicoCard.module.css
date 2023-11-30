@@ -1,5 +1,4 @@
 .card {
-  border: solid black 2px;
   padding: 15px;
   width: 100%;
   height: 100%;
@@ -9,9 +8,14 @@
   margin-bottom: 20px;
 }
 
+.card p {
+  color: red;
+  font-size: 25px;
+}
+
 .card_Pai {
-  border: solid black 2px;
-  margin: 15px;
+  border: solid #D2691E 1px;
+  margin: 50px 15px;
   padding: 15px;
   width: 100%;
   height: 100%;

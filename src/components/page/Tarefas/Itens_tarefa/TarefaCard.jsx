@@ -11,7 +11,9 @@ export default function TarefaCard({id, name, descricao, handRemover}) {
     }
 
   return (
-    <div className={style.container}>
+
+
+      <div className={style.card}>
       <h1>Tarefa: {name}</h1>
    
       <p>Descrição:{descricao}</p>
@@ -20,7 +22,8 @@ export default function TarefaCard({id, name, descricao, handRemover}) {
         <Link to={`/edittarefas/${id}`}>Editar</Link>
         <button  onClick={remover}>Exluir</button>
       </div>
+      </div>
       
-    </div>
+    
   );
 }

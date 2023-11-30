@@ -76,7 +76,7 @@ function removerProjeto(id){
               key={projeto.id}
               id={projeto.id}
               name={projeto.name}
-              budget={projeto.budget}
+              budget={projeto.budget }
               categorias={projeto.categoria ? projeto.categoria.name : "Categoria não definida"}
               handRemover={removerProjeto}
             />

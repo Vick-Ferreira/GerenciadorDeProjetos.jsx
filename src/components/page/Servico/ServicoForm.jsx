@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Input from '../../form/Input/Input';
 import ButtonSubmit from '../../form/ButtonSubmit/ButtonSubmit';
 
-import styles from '../Projeto/Projeto_itens/ProjetoForm'
+
+import styles from '../Servico/ServicoForm.module.css'
 
 
 export default function ServicoForm({  handleSubmit, btntext,  ProjetoData}) {

@@ -4,9 +4,9 @@ $larguraXL: 1200px;
 
 
 .home_container{
-    padding: 20em 1em;
+    padding:  20em 1em;
     color: white;
-    min-width: 18em;
+    min-width: 320px;
     max-width: 45em;
     float: right;
     text-align: left;
@@ -23,13 +23,7 @@ $larguraXL: 1200px;
     margin-bottom: 1em;
     font-size: 20px;
 }
-@media screen and (min-width: $larguraMenor) {
-    .home_container{
-        padding: 20em 5em;
-     
-      
-    }
-}
+
 
 @media screen and (min-width: $larguraMD) {
     .span{

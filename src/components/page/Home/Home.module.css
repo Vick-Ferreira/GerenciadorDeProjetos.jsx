@@ -1,7 +1,7 @@
 .home_container {
   padding: 20em 1em;
   color: white;
-  min-width: 18em;
+  min-width: 320px;
   max-width: 45em;
   float: right;
   text-align: left;
@@ -17,11 +17,6 @@
   font-size: 20px;
 }
 
-@media screen and (min-width: 500px) {
-  .home_container {
-    padding: 20em 5em;
-  }
-}
 @media screen and (min-width: 768px) {
   .span {
     font-size: 20px;

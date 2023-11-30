@@ -19,6 +19,13 @@ justify-content: center; /* Centraliza horizontalmente */
   min-width: 300px;
   min-height: 300px ;
 
+
+}
+.table_container table p{
+  border:solid 1px;
+  color:red;
+
+ 
 }
 
 .table_container table th{
@@ -65,7 +72,9 @@ justify-content: center; /* Centraliza horizontalmente */
      
  }
  .linkNew a{
- margin: 10px;}
-
-
+ margin: 10px;
+}
+.projeto_detalhes p{
+  color:red;
+}
   
