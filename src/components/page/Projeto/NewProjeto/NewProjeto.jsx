@@ -22,13 +22,15 @@ export default function NewProject() {
           },
           body: JSON.stringify(projeto),
         })
-          .then((resp) => resp.json())
-          .then((data) => {
-            navigate('../projetos/projetos',{ state: {mensagem: 'Projeto criado com sucesso!' }})
-            
-          })
+        .then((resp) => resp.json())
+        .then((data) => {
+          navigate('../projetos/projetos', { state: { mensagem: 'Projeto criado com sucesso!' } });
+        })
+        .catch((error) => {
+          console.error('Erro na requisição para a API:', error);
+          // Adicione lógica para lidar com o erro, como exibir uma mensagem de erro
+        })
       }
-
 
   return (
     <div className={styles.newproject_container}>
