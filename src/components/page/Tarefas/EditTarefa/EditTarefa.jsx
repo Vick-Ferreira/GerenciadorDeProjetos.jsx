@@ -45,19 +45,19 @@ export default function EditTarefas() {
       },
       body: JSON.stringify(tarefa),
     })
-    .then((resp) => {
-      console.log('Resposta da API antes da análise:', resp); // Adicione esta linha para verificar a resposta
-      return resp.json();
-    })
+    .then((resp) => resp.json())
     .then((data) => {
       console.log('Resposta da API após a atualização:', data);
-      navigate('../tarefas'); // Use navigate para redirecionar
+  
+      // Adicione a navegação aqui para redirecionar após a atualização
+      navigate('../tarefas');
     })
     .catch((err) => {
       console.error('Erro na requisição para a API:', err);
       // Adicione lógica para lidar com o erro, como exibir uma mensagem de erro
     });
   }
+  
 
   if (isLoading) {
     return <p>Carregando...</p>;
