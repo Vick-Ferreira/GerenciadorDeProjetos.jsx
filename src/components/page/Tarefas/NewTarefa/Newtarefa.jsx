@@ -22,9 +22,7 @@ export default function Newtarefa() {
     .then((data) => {
       console.log('dados recebidos apos o POST', data)
       navigate('../tarefas', {state: {mensagem: 'Tarefa criada com sucesso!'}})
-    })
-    .catch((error) => {
-      console.error('Erro durante a requisição POST:', error);
+    
     });
 
    }
