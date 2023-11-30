@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './NewProjeto.module.css'
 import ProjectForm from '../Projeto_itens/ProjetoForm';
-import Mensagem from '../../Layout/Mensagem/Mensagem';
 
 
 export default function NewProject() {
@@ -25,9 +24,9 @@ export default function NewProject() {
         })
           .then((resp) => resp.json())
           .then((data) => {
-            navigate('../projetos/projetos')
-           
-})
+            navigate('../projetos/projetos',{ state: {mensagem: 'Projeto criado com sucesso!' }})
+            
+          })
       }
 
 
