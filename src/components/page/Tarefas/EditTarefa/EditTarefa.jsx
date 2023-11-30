@@ -35,8 +35,9 @@ export default function EditTarefas() {
       console.log('ID da tarefa não definido.');
       return;
     }
-
+  
     console.log('Tentando atualizar tarefa:', tarefa);
+  
     fetch(`https://json-qrcod.vercel.app/tarefas/${tarefa.id}`, {
       method: 'PATCH',
       headers: {
@@ -44,12 +45,18 @@ export default function EditTarefas() {
       },
       body: JSON.stringify(tarefa),
     })
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log('Resposta da API após a atualização:', data);
-        navigate('../tarefas'); // Use navigate para redirecionar
-      })
-      .catch((err) => console.log(err));
+    .then((resp) => {
+      console.log('Resposta da API antes da análise:', resp); // Adicione esta linha para verificar a resposta
+      return resp.json();
+    })
+    .then((data) => {
+      console.log('Resposta da API após a atualização:', data);
+      navigate('../tarefas'); // Use navigate para redirecionar
+    })
+    .catch((err) => {
+      console.error('Erro na requisição para a API:', err);
+      // Adicione lógica para lidar com o erro, como exibir uma mensagem de erro
+    });
   }
 
   if (isLoading) {
