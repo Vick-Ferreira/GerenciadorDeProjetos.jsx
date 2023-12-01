@@ -64,12 +64,12 @@ export default function ProjetoEdit() {
         setProjeto(data);
         setShowProjetoForm(!showProjetoForm);
         setMensagem('Projeto atualizado!');
-        setType('success');
+        setType('sucesso');
       })
       .catch((error) => {
         console.error('Erro na solicitação:', error.message);
         setMensagem('Erro ao atualizar o projeto. Verifique o console para mais detalhes.');
-        setType('error');
+        setType('erro');
       });
   }
   function criarServico(projeto) {
