@@ -52,24 +52,22 @@ export default function ProjetoEdit() {
       },
       body: JSON.stringify(projeto),
     })
-      .then((resp) => resp.json())
+      .then((resp) => {
+        if (!resp.ok) {
+          throw new Error(`Erro na solicitação: ${resp.status} ${resp.statusText}`);
+        }
+        return resp.text(); // Alterado para capturar a resposta como texto
+      })
       .then((data) => {
         console.log('Resposta do servidor:', data);
-        setProjeto(data);
-        setShowProjetoForm(!showProjetoForm);
-        setMensagem('Projeto atualizado!');
-        setType('success');
-      
-        setTimeout(() => {
-          setMensagem('');
-        }, 3000);
+        // Resto do código...
       })
       .catch((error) => {
         console.error('Erro na solicitação:', error.message);
         setMensagem('Erro ao atualizar o projeto. Verifique o console para mais detalhes.');
         setType('error');
       });
-  }
+    }    
 
   function criarServico(projeto) {
     // last service
