@@ -38,7 +38,7 @@ export default function Projetos() {
 //IMPORTANTE EXCLUIR
 function removerProjeto(id){
 
-  fetch(`https://json-qrcod.vercel.app/projetos${id}`, {
+  fetch(`https://json-qrcod.vercel.app/projetos/${id}`, {
     method: 'DELETE',
     headers:{ //retorna algo
       'Content-Type': 'application/json'
