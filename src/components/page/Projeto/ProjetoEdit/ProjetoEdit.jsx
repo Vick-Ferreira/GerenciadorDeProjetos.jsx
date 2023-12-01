@@ -25,7 +25,7 @@ export default function ProjetoEdit() {
   const [type, setType] = useState('sucesso');
 
   useEffect(() => {
-    fetch(`https://json-qrcod.vercel.app/projetos/${id}`, {
+    fetch(`http://localhost:5000/projetos/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ export default function ProjetoEdit() {
       return false;
     }
   
-    fetch(`https://json-qrcod.vercel.app/projetos/${projeto.id}`, {
+    fetch(`http://localhost:5000/projetos/${projeto.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ export default function ProjetoEdit() {
     projeto.cost = newCost;
   
     // Atualiza o projeto no servidor parcialmente (apenas o custo e a lista de serviços)
-    fetch(`https://json-qrcod.vercel.app/projetos/${projeto.id}`, {
+    fetch(`http://localhost:5000/projetos/${projeto.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -138,7 +138,7 @@ export default function ProjetoEdit() {
     projetoUpdate.servicos = servicosUpdate;
     projetoUpdate.cost = parseFloat(projetoUpdate.cost) - parseFloat(cost);
   
-    fetch(`https://json-qrcod.vercel.app/projetos/${projetoUpdate.id}`, {
+    fetch(`http://localhost:5000/projetos/${projetoUpdate.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

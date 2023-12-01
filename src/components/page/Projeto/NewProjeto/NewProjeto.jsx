@@ -15,7 +15,7 @@ export default function NewProject() {
         projeto.cost = 0
         projeto.servicos = []
     
-        fetch('https://json-qrcod.vercel.app/projetos', {
+        fetch('http://localhost:5000/projetos', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

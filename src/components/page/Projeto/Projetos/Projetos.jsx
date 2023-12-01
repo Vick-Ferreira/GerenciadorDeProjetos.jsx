@@ -19,7 +19,7 @@ export default function Projetos() {
     // Para ver o loading
     setTimeout(
       () =>
-        fetch('https://json-qrcod.vercel.app/projetos', {
+        fetch('http://localhost:5000/projetos', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ export default function Projetos() {
 //IMPORTANTE EXCLUIR
 function removerProjeto(id){
 
-  fetch(`https://json-qrcod.vercel.app/projetos/${id}`, {
+  fetch(`http://localhost:5000/projetos/${id}`, {
     method: 'DELETE',
     headers:{ //retorna algo
       'Content-Type': 'application/json'

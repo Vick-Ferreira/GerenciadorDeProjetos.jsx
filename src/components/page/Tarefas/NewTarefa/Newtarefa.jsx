@@ -12,7 +12,7 @@ export default function Newtarefa() {
   //função CRIAR TAREFA
 
    function createPost(tarefa){
-    fetch('https://json-qrcod.vercel.app/tarefas', {
+    fetch('http://localhost:5000/tarefas', {
       method:'POST',
       headers: {
         'Content-Type': 'application/json',

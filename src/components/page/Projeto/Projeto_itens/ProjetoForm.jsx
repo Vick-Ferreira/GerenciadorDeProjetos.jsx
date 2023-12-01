@@ -19,7 +19,7 @@ export default function ProjectForm({ handleSubmit, btntext, ProjetoData}) { // 
   //uma só vez ao CHAMA AO MONTAR CATEGORIAS
   useEffect(() => {
       //REQUEST PARA A API
-    fetch("https://json-qrcod.vercel.app/categorias", {
+    fetch('http://localhost:5000/categorias', {
     method: "GET",
     headers: {
       'Content-Type': 'application/json'
