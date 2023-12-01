@@ -19,7 +19,11 @@ export default function Projetos() {
     // Para ver o loading
     setTimeout(
       () =>
+<<<<<<< HEAD
         fetch('http://localhost:5000/projetos', {
+=======
+        fetch('https://banco-js-gerenciador.vercel.app/projetos', {
+>>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -38,7 +42,11 @@ export default function Projetos() {
 //IMPORTANTE EXCLUIR
 function removerProjeto(id){
 
+<<<<<<< HEAD
   fetch(`http://localhost:5000/projetos/${id}`, {
+=======
+  fetch(`https://banco-js-gerenciador.vercel.app/projetos/${id}`, {
+>>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
     method: 'DELETE',
     headers:{ //retorna algo
       'Content-Type': 'application/json'

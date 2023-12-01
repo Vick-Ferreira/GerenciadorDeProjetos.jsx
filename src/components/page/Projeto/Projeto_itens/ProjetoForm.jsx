@@ -19,7 +19,11 @@ export default function ProjectForm({ handleSubmit, btntext, ProjetoData}) { // 
   //uma só vez ao CHAMA AO MONTAR CATEGORIAS
   useEffect(() => {
       //REQUEST PARA A API
+<<<<<<< HEAD
     fetch('http://localhost:5000/categorias', {
+=======
+    fetch('https://banco-js-gerenciador.vercel.app/categorias', {
+>>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
     method: "GET",
     headers: {
       'Content-Type': 'application/json'

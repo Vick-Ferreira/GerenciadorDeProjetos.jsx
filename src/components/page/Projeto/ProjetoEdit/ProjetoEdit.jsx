@@ -25,7 +25,12 @@ export default function ProjetoEdit() {
   const [type, setType] = useState('sucesso');
 
   useEffect(() => {
+<<<<<<< HEAD
     fetch(`http://localhost:5000/projetos/${id}`, {
+=======
+    if (id && typeof id === 'string') {
+    fetch(`https://banco-js-gerenciador.vercel.app/projetos/${id}`, {
+>>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -36,6 +41,7 @@ export default function ProjetoEdit() {
         setProjeto(data);
         setServicos(data.servicos);
       });
+    }
   }, [id]);
 
   function editPost(projeto) {
@@ -46,7 +52,11 @@ export default function ProjetoEdit() {
       return false;
     }
   
+<<<<<<< HEAD
     fetch(`http://localhost:5000/projetos/${projeto.id}`, {
+=======
+    fetch(`https://banco-js-gerenciador.vercel.app/projetos/${projeto.id}`, {
+>>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -54,10 +64,8 @@ export default function ProjetoEdit() {
       body: JSON.stringify(projeto),
     })
       .then((resp) => {
-        if (!resp.ok) {
-          throw new Error(`Erro na solicitação: ${resp.status} ${resp.statusText}`);
-        }
-        return resp.json(); // Alterado para capturar a resposta como JSON
+        console.log(`Recebida resposta do servidor: ${resp.status} ${resp.statusText}`);
+        return resp.json();
       })
       .then((data) => {
         console.log('Resposta do servidor:', data);
@@ -67,11 +75,12 @@ export default function ProjetoEdit() {
         setType('sucesso');
       })
       .catch((error) => {
-        console.error('Erro na solicitação:', error.message);
+        console.error('Erro na requisição para o servidor:', error);
         setMensagem('Erro ao atualizar o projeto. Verifique o console para mais detalhes.');
         setType('erro');
       });
   }
+  
   function criarServico(projeto) {
     // last service
     const lastService = projeto.servicos[projeto.servicos.length - 1];
@@ -97,7 +106,11 @@ export default function ProjetoEdit() {
     projeto.cost = newCost;
   
     // Atualiza o projeto no servidor parcialmente (apenas o custo e a lista de serviços)
+<<<<<<< HEAD
     fetch(`http://localhost:5000/projetos/${projeto.id}`, {
+=======
+    fetch(`https://banco-js-gerenciador.vercel.app/projetos/${projeto.id}`, {
+>>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -106,28 +119,20 @@ export default function ProjetoEdit() {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        console.log('Resposta do servidor:', data);
-        console.log('Antes de setServicos:', projeto.servicos);
-        
         setServicos(data.servicos);
-  
-        console.log('Depois de setServicos:', data.servicos);
-        
         setShowServicoForm(!showServicoForm);
         setMensagem('Serviço adicionado');
         setType('sucesso');
   
-        // Limpar a mensagem após 3 segundos (3000 milissegundos)
         setTimeout(() => {
           setMensagem('');
         }, 3000);
       })
-      .catch((err) => {
-        console.error('Erro ao atualizar o projeto:', err);
-        // Lide com o erro conforme necessário
+      .catch((error) => {
+        setMensagem('Erro ao atualizar o projeto. Verifique o console para mais detalhes.');
+        setType('erro');
       });
-  };
-  
+  }
 
   function removerServico(id, cost) {
     const servicosUpdate = projeto.servicos.filter(
@@ -138,7 +143,11 @@ export default function ProjetoEdit() {
     projetoUpdate.servicos = servicosUpdate;
     projetoUpdate.cost = parseFloat(projetoUpdate.cost) - parseFloat(cost);
   
+<<<<<<< HEAD
     fetch(`http://localhost:5000/projetos/${projetoUpdate.id}`, {
+=======
+    fetch(`https://banco-js-gerenciador.vercel.app/projetos/${projetoUpdate.id}`, {
+>>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

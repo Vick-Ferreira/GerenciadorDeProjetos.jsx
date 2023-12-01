@@ -11,7 +11,11 @@ export default function EditTarefas() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+<<<<<<< HEAD
     fetch(`http://localhost:5000/tarefas/${id}`, {
+=======
+    fetch(`https://banco-js-gerenciador.vercel.app/tarefas/${id}`, {
+>>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -38,7 +42,11 @@ export default function EditTarefas() {
   
     console.log('Tentando atualizar tarefa:', tarefa);
   
+<<<<<<< HEAD
     fetch(`http://localhost:5000/tarefas/${tarefa.id}`, {
+=======
+    fetch(`https://banco-js-gerenciador.vercel.app/tarefas/${tarefa.id}`, {
+>>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

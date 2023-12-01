@@ -13,7 +13,11 @@ export default function Tarefas() {
 
 //regatando dados NewTarefas para LISTAR GET
 useEffect(() => {
+<<<<<<< HEAD
   fetch("http://localhost:5000/tarefas", {
+=======
+  fetch("https://banco-js-gerenciador.vercel.app/tarefas", {
+>>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -32,7 +36,11 @@ useEffect(() => {
 //IMPORTANTE DELETE TAREFA
 function removerTarefa(id){
 
+<<<<<<< HEAD
   fetch(`http://localhost:5000/tarefas/${id}`, {
+=======
+  fetch(`https://banco-js-gerenciador.vercel.app/tarefas/${id}`, {
+>>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
     method: 'DELETE',
     headers:{ //retorna algo
       'Content-Type': 'application/json'

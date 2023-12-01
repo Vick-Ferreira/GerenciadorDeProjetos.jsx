@@ -10,22 +10,37 @@ export default function NewProject() {
 
 
       //REQUEST PARA A API
+<<<<<<< HEAD
       function createPost(projeto) {//projeto (argumento)
         //inicialização servidor   - ISSO SERIA FEITO NO BACKEND
         projeto.cost = 0
         projeto.servicos = []
     
         fetch('http://localhost:5000/projetos', {
+=======
+      function createPost(projeto) {
+        projeto.cost = 0;
+        projeto.servicos = [];
+      
+        fetch('https://banco-js-gerenciador.vercel.app/projetos', {
+>>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(projeto),
         })
-        .then((resp) => resp.json())
-        setTimeout(() => {
-          navigate('../projetos', { state: { mensagem: 'Projeto criado com sucesso!' } });
-        }, 500);
+          .then((resp) => resp.json())
+          .then((data) => {
+            console.log('Resposta da API após a criação:', data);
+            setTimeout(() => {
+              navigate('../projetos', { state: { mensagem: 'Projeto criado com sucesso!' } });
+            }, 500);
+          })
+          .catch((err) => {
+            console.error('Erro na requisição para a API:', err.message);
+            // Adicione lógica para lidar com o erro, como exibir uma mensagem de erro
+          });
       }
 
   return (
