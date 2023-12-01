@@ -41,11 +41,11 @@ export default function ProjetoEdit() {
   function editPost(projeto) {
     // budget validation
     if (projeto.budget < projeto.cost) {
-      setMensagem('O Orçamento não pode ser menor que o custo do projeto!')
-      setType('erro')
-      return false
+      setMensagem('O Orçamento não pode ser menor que o custo do projeto!');
+      setType('error');
+      return false;
     }
-
+  
     fetch(`https://json-qrcod.vercel.app/projetos/${projeto.id}`, {
       method: 'PATCH',
       headers: {
@@ -53,15 +53,25 @@ export default function ProjetoEdit() {
       },
       body: JSON.stringify(projeto),
     })
-      .then((resp) => resp.json())
-      .then((data) => {
-        setProjeto(data)
-        setShowProjetoForm(!showProjetoForm)
-        setMensagem('Projeto atualizado!')
-        setType('sucesso')
+      .then((resp) => {
+        if (!resp.ok) {
+          throw new Error(`Erro na solicitação: ${resp.status} ${resp.statusText}`);
+        }
+        return resp.json(); // Alterado para capturar a resposta como JSON
       })
-  }   
-
+      .then((data) => {
+        console.log('Resposta do servidor:', data);
+        setProjeto(data);
+        setShowProjetoForm(!showProjetoForm);
+        setMensagem('Projeto atualizado!');
+        setType('success');
+      })
+      .catch((error) => {
+        console.error('Erro na solicitação:', error.message);
+        setMensagem('Erro ao atualizar o projeto. Verifique o console para mais detalhes.');
+        setType('error');
+      });
+  }
   function criarServico(projeto) {
     // last service
     const lastService = projeto.servicos[projeto.servicos.length - 1];
