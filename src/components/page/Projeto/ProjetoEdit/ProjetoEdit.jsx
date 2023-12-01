@@ -66,34 +66,30 @@ export default function ProjetoEdit() {
       });
   }
 
-  function criarServico(projeto){
+  function criarServico(projeto) {
+    // last service
+    const lastService = projeto.servicos[projeto.servicos.length - 1];
+    lastService.id = uuidv4();
   
-     // last service
-     const lastService = projeto.servicos[projeto.servicos.length - 1]
-
-     lastService.id = uuidv4()
- 
-     const lastServiceCost = lastService.cost
- 
-     const newCost = parseFloat(projeto.cost) + parseFloat(lastServiceCost)
- 
-     // maximum value validation
-     if (newCost > parseFloat(projeto.budget)) {
-       setMensagem('Orçamento ultrapassado, verifique o valor do serviço!')
-       setType('erro')
-
-       setTimeout(() => {
+    const lastServiceCost = lastService.cost;
+    const newCost = parseFloat(projeto.cost) + parseFloat(lastServiceCost);
+  
+    // maximum value validation
+    if (newCost > parseFloat(projeto.budget)) {
+      setMensagem('Orçamento ultrapassado, verifique o valor do serviço!');
+      setType('erro');
+  
+      setTimeout(() => {
         setMensagem('');
       }, 3000);
-
-       projeto.servicos.pop()
-       return false
-     }
-
-
+  
+      projeto.servicos.pop();
+      return false;
+    }
+  
     // Atualiza o custo total do projeto
     projeto.cost = newCost;
-
+  
     // Atualiza o projeto no servidor parcialmente (apenas o custo e a lista de serviços)
     fetch(`https://json-qrcod.vercel.app/projetos/${projeto.id}`, {
       method: 'PATCH',
@@ -104,11 +100,17 @@ export default function ProjetoEdit() {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        setServicos(data.servicos)
-        setShowServicoForm(!showServicoForm)
-        setMensagem('Serviço adicionado')
-        setType('sucesso')
-
+        console.log('Resposta do servidor:', data);
+        console.log('Antes de setServicos:', projeto.servicos);
+        
+        setServicos(data.servicos);
+  
+        console.log('Depois de setServicos:', data.servicos);
+        
+        setShowServicoForm(!showServicoForm);
+        setMensagem('Serviço adicionado');
+        setType('sucesso');
+  
         // Limpar a mensagem após 3 segundos (3000 milissegundos)
         setTimeout(() => {
           setMensagem('');
@@ -119,7 +121,7 @@ export default function ProjetoEdit() {
         // Lide com o erro conforme necessário
       });
   };
-
+  
 
   function removerServico(id, cost) {
     const servicosUpdate = projeto.servicos.filter(
