@@ -1,14 +1,27 @@
 {
   "projetos": [
     {
-      "name": "Servido",
-      "budget": "500.05",
+      "name": "Serviço",
+      "budget": "400.00",
       "categoria": {
         "id": "1",
         "name": "Infra"
       },
-      "cost": 0,
-      "servicos": [],
+      "cost": 400,
+      "servicos": [
+        {
+          "name": "primeiro",
+          "cost": "350.00",
+          "descricao": "aa",
+          "id": "2b6d4961-8aaa-4bd8-ba1a-3ccbfeff0923"
+        },
+        {
+          "name": "segundo",
+          "cost": "50.00",
+          "descricao": "bb",
+          "id": "b83a2bc6-7146-4a3d-b366-971394302057"
+        }
+      ],
       "id": 1
     },
     {
@@ -49,5 +62,11 @@
       "name": "Dev"
     }
   ],
-  "tarefas": []
+  "tarefas": [
+    {
+      "titulo": "Primeiro",
+      "descricao": "Primeiro",
+      "id": 1
+    }
+  ]
 }

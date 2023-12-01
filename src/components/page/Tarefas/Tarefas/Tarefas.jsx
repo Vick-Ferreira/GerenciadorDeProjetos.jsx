@@ -13,7 +13,7 @@ export default function Tarefas() {
 
 //regatando dados NewTarefas para LISTAR GET
 useEffect(() => {
-  fetch("http://localhost:5000/tarefas", {
+  fetch("https://json-qrcod.vercel.app/tarefas", {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ useEffect(() => {
 //IMPORTANTE DELETE TAREFA
 function removerTarefa(id){
 
-  fetch(`http://localhost:5000/tarefas/${id}`, {
+  fetch(`https://json-qrcod.vercel.app/tarefas/${id}`, {
     method: 'DELETE',
     headers:{ //retorna algo
       'Content-Type': 'application/json'

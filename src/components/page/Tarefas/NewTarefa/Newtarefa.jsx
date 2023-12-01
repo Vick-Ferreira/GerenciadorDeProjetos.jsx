@@ -22,7 +22,7 @@ export default function Newtarefa() {
     .then((resp) => resp.json())
     .then((data) => {
       console.log('dados recebidos apos o POST', data)
-      navigate('.../Tarefas/Tarefas', {state: {mensagem: 'Tarefa criada com sucesso!'}})
+      navigate('/tarefas', {state: {mensagem: 'Tarefa criada com sucesso!'}})
     
     });
 
