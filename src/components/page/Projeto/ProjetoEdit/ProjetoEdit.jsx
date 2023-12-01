@@ -54,15 +54,20 @@ export default function ProjetoEdit() {
     })
       .then((resp) => resp.json())
       .then((data) => {
+        console.log('Resposta do servidor:', data);
         setProjeto(data);
         setShowProjetoForm(!showProjetoForm);
         setMensagem('Projeto atualizado!');
-        setType('sucesso');
-  
-        // Exibir a mensagem de sucesso por 3 segundos (ajuste conforme necessário)
+        setType('success');
+      
         setTimeout(() => {
           setMensagem('');
         }, 3000);
+      })
+      .catch((error) => {
+        console.error('Erro na solicitação:', error.message);
+        setMensagem('Erro ao atualizar o projeto. Verifique o console para mais detalhes.');
+        setType('error');
       });
   }
 
@@ -140,7 +145,7 @@ export default function ProjetoEdit() {
       body: JSON.stringify(projetoUpdate),
     })
     .then((resp) => {
-      console.log(resp); // Adicione esta linha para verificar a resposta
+      console.log(resp); // Adicione esta linha para verificar a resposta servidor
       return resp.json();
     })
     .then((data) => {
