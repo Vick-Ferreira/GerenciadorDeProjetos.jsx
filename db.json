@@ -1,5 +1,28 @@
 {
-  "projetos": [],
+  "projetos": [
+    {
+      "name": "React + node.js",
+      "budget": "500.00",
+      "categoria": {
+        "id": "6",
+        "name": "Dev"
+      },
+      "cost": 0,
+      "servicos": [],
+      "id": 1
+    },
+    {
+      "name": "Servidor",
+      "budget": "300.00",
+      "categoria": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "servicos": [],
+      "id": 2
+    }
+  ],
   "categorias": [
     {
       "id": 1,

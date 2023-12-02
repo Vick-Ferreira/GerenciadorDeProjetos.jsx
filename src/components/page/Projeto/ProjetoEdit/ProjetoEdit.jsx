@@ -13,7 +13,6 @@ import Mensagem from '../../Layout/Mensagem/Mensagem';
 import ServicoForm from '../../Servico/ServicoForm';
 import ServicoCard from '../../Servico/ServicoCard';
 
-
 export default function ProjetoEdit() {
   let { id } = useParams();
 
@@ -25,92 +24,75 @@ export default function ProjetoEdit() {
   const [type, setType] = useState('sucesso');
 
   useEffect(() => {
-<<<<<<< HEAD
-    fetch(`http://localhost:5000/projetos/${id}`, {
-=======
-    if (id && typeof id === 'string') {
-    fetch(`https://banco-js-gerenciador.vercel.app/projetos/${id}`, {
->>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        setProjeto(data);
-        setServicos(data.servicos);
-      });
-    }
+      fetch(`http://localhost:5000/projetos/${id}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then((resp) => resp.json())
+        .then((data) => {
+          setProjeto(data);
+          setServicos(data.servicos);
+        });
+    
   }, [id]);
 
   function editPost(projeto) {
-    // budget validation
     if (projeto.budget < projeto.cost) {
       setMensagem('O Orçamento não pode ser menor que o custo do projeto!');
       setType('error');
       return false;
     }
-  
-<<<<<<< HEAD
+
     fetch(`http://localhost:5000/projetos/${projeto.id}`, {
-=======
-    fetch(`https://banco-js-gerenciador.vercel.app/projetos/${projeto.id}`, {
->>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(projeto),
     })
-      .then((resp) => {
-        console.log(`Recebida resposta do servidor: ${resp.status} ${resp.statusText}`);
-        return resp.json();
-      })
+      .then((resp) => resp.json())
       .then((data) => {
-        console.log('Resposta do servidor:', data);
         setProjeto(data);
         setShowProjetoForm(!showProjetoForm);
         setMensagem('Projeto atualizado!');
         setType('sucesso');
+        setTimeout(() => {
+          setMensagem('');
+        }, 3000);
+      
       })
       .catch((error) => {
         console.error('Erro na requisição para o servidor:', error);
         setMensagem('Erro ao atualizar o projeto. Verifique o console para mais detalhes.');
         setType('erro');
+
       });
   }
-  
+
   function criarServico(projeto) {
-    // last service
     const lastService = projeto.servicos[projeto.servicos.length - 1];
     lastService.id = uuidv4();
-  
+
     const lastServiceCost = lastService.cost;
     const newCost = parseFloat(projeto.cost) + parseFloat(lastServiceCost);
-  
-    // maximum value validation
+
     if (newCost > parseFloat(projeto.budget)) {
       setMensagem('Orçamento ultrapassado, verifique o valor do serviço!');
       setType('erro');
-  
+
       setTimeout(() => {
         setMensagem('');
       }, 3000);
-  
+
       projeto.servicos.pop();
       return false;
     }
-  
-    // Atualiza o custo total do projeto
+
     projeto.cost = newCost;
-  
-    // Atualiza o projeto no servidor parcialmente (apenas o custo e a lista de serviços)
-<<<<<<< HEAD
+
     fetch(`http://localhost:5000/projetos/${projeto.id}`, {
-=======
-    fetch(`https://banco-js-gerenciador.vercel.app/projetos/${projeto.id}`, {
->>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -123,7 +105,7 @@ export default function ProjetoEdit() {
         setShowServicoForm(!showServicoForm);
         setMensagem('Serviço adicionado');
         setType('sucesso');
-  
+
         setTimeout(() => {
           setMensagem('');
         }, 3000);
@@ -138,41 +120,34 @@ export default function ProjetoEdit() {
     const servicosUpdate = projeto.servicos.filter(
       (servico) => servico.id !== id,
     );
-  
+
     const projetoUpdate = projeto;
     projetoUpdate.servicos = servicosUpdate;
     projetoUpdate.cost = parseFloat(projetoUpdate.cost) - parseFloat(cost);
-  
-<<<<<<< HEAD
+
     fetch(`http://localhost:5000/projetos/${projetoUpdate.id}`, {
-=======
-    fetch(`https://banco-js-gerenciador.vercel.app/projetos/${projetoUpdate.id}`, {
->>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(projetoUpdate),
     })
-    .then((resp) => {
-      console.log(resp); // Adicione esta linha para verificar a resposta servidor
-      return resp.json();
-    })
-    .then((data) => {
-      setProjeto(projetoUpdate);
-      setServicos(servicosUpdate);
-      setMensagem('Serviço removido com sucesso!');
-      setType('erro');
-  
-      setTimeout(() => {
-        setMensagem('');
-      }, 3000);
-    })
-    .catch((error) => {
-      console.error('Erro na requisição para a API:', error);
-      // Adicione lógica para lidar com o erro, como exibir uma mensagem de erro
-    });
+      .then((resp) => resp.json())
+      .then((data) => {
+        setProjeto(projetoUpdate);
+        setServicos(servicosUpdate);
+        setMensagem('Serviço removido com sucesso!');
+        setType('erro');
+
+        setTimeout(() => {
+          setMensagem('');
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error('Erro na requisição para a API:', error);
+      });
   }
+
   function toggleProjetoForms() {
     setShowProjetoForm((prev) => !prev);
   }
@@ -180,7 +155,6 @@ export default function ProjetoEdit() {
   function toggleServicoForm() {
     setShowServicoForm((prev) => !prev);
   }
-
 
   return (
     <>

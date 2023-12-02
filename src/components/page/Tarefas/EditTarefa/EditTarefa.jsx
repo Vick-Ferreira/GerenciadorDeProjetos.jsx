@@ -2,25 +2,16 @@ import { useEffect, useState } from "react";
 import Container from "../../Layout/Container/Container";
 import TarefaForm from "../Itens_tarefa/TarefaForm";
 import styles from '../NewTarefa/NewTarefa.module.css'
-import { useParams, useNavigate } from 'react-router-dom'; // Importe useNavigate
+import { useParams, useNavigate } from 'react-router-dom';
 
 export default function EditTarefas() {
   const { id } = useParams();
-  const navigate = useNavigate(); // Use useNavigate em vez de useHistory
+  const navigate = useNavigate();
   const [tarefa, setTarefa] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-<<<<<<< HEAD
-    fetch(`http://localhost:5000/tarefas/${id}`, {
-=======
-    fetch(`https://banco-js-gerenciador.vercel.app/tarefas/${id}`, {
->>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
+    fetch(` http://localhost:5000/tarefas/${id}`)
       .then((resp) => resp.json())
       .then((data) => {
         setTarefa(data);
@@ -34,24 +25,20 @@ export default function EditTarefas() {
 
   console.log('TarefaData:', tarefa);
 
-  function editPost(tarefa) {
-    if (!tarefa.id) {
+  function editPost(updatedTarefa) {
+    if (!updatedTarefa.id) {
       console.log('ID da tarefa não definido.');
       return;
     }
   
-    console.log('Tentando atualizar tarefa:', tarefa);
+    console.log('Tentando atualizar tarefa:', updatedTarefa);
   
-<<<<<<< HEAD
-    fetch(`http://localhost:5000/tarefas/${tarefa.id}`, {
-=======
-    fetch(`https://banco-js-gerenciador.vercel.app/tarefas/${tarefa.id}`, {
->>>>>>> af31ed13035588a9627d8ef0a35470a1ff57b641
+    fetch(` http://localhost:5000/tarefas/${updatedTarefa.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(tarefa),
+      body: JSON.stringify(updatedTarefa),
     })
     .then((resp) => resp.json())
     .then((data) => {
@@ -73,10 +60,8 @@ export default function EditTarefas() {
 
   return (
     <Container>
-        <div className={styles.newtarefa_container}>
-
+      <div className={styles.newtarefa_container}>
         <h1>Editando Tarefa</h1>
-        
         <TarefaForm
           handleSubmit={editPost}
           btnText="Salvar Edição"

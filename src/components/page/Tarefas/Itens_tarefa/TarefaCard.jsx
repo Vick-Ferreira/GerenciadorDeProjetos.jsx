@@ -12,17 +12,14 @@ export default function TarefaCard({id, name, descricao, handRemover}) {
 
   return (
 
-
-      <div className={style.card}>
-      <h1>Tarefa: {name}</h1>
-   
-      <p>Descrição:{descricao}</p>
-
-      <div className={style.btn}>
+    <div className={style.card}>
+    <h1>Tarefa: {name}</h1>
+    <p>Descrição: {descricao}</p>
+    <div className={style.btn}>
         <Link to={`/edittarefas/${id}`}>Editar</Link>
-        <button  onClick={remover}>Exluir</button>
-      </div>
-      </div>
+        <button onClick={remover}>Excluir</button>
+    </div>
+</div>
       
     
   );
